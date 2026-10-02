@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101d2b" />
+    <meta
+      name="description"
+      content="GridGuard helps utility field teams find abnormal distribution losses and prioritize transformer inspections."
+    />
+    <title>GridGuard — Distribution intelligence</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#overview" aria-label="GridGuard overview">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M18.8 3.5 8.4 17h6.9l-1.8 11.5L24 14.4h-7l1.8-10.9Z" fill="currentColor" />
+              <path d="M5 24.5h5.8M21.4 24.5H27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".65" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>gridguard</strong>
+            <span>GRID INTELLIGENCE</span>
+          </span>
+          <span class="brand-edition">BETA</span>
+        </a>
+
+        <div class="workspace-switcher">
+          <span class="workspace-icon">W</span>
+          <span class="workspace-copy"><strong>Western region</strong><small>Demo utility</small></span>
+          <span class="chevron">⌄</span>
+        </div>
+
+        <p class="nav-label">WORKSPACE</p>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="overview">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="6" height="6" rx="1.2" /><rect x="11.5" y="2.5" width="6" height="6" rx="1.2" /><rect x="2.5" y="11.5" width="6" height="6" rx="1.2" /><rect x="11.5" y="11.5" width="6" height="6" rx="1.2" /></svg>
+            <span>Overview</span>
+          </button>
+          <button class="nav-item" data-view="network">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="3.5" r="2" /><circle cx="4" cy="15.5" r="2" /><circle cx="16" cy="15.5" r="2" /><path d="M9 5.2 5 13.6m6-8.4 4 8.4M6 15.5h8" /></svg>
+            <span>Feeder network</span>
+          </button>
+          <button class="nav-item" data-view="assets">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h14v10H3zM6 3.5h8v3H6zM6 10h3m2 0h3m-8 3h3m2 0h3" /></svg>
+            <span>Transformer assets</span>
+            <span class="nav-count">08</span>
+          </button>
+          <button class="nav-item" data-view="investigations">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5 17 5v4.8c0 3.6-2.9 6.3-7 7.7-4.1-1.4-7-4.1-7-7.7V5l7-2.5Z" /><path d="M10 6.5v4m0 2.5v.1" /></svg>
+            <span>Investigations</span>
+            <span class="nav-count alert-count">03</span>
+          </button>
+        </nav>
+
+        <p class="nav-label nav-label-spaced">MANAGE</p>
+        <nav class="primary-nav" aria-label="Management">
+          <button class="nav-item" data-view="data">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="6.5" ry="2.5" /><path d="M3.5 4.5v5c0 1.4 2.9 2.5 6.5 2.5s6.5-1.1 6.5-2.5v-5M3.5 9.5v5c0 1.4 2.9 2.5 6.5 2.5s6.5-1.1 6.5-2.5v-5" /></svg>
+            <span>Data health</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+        <div class="pilot-card">
+          <div class="pilot-card-top"><span class="pilot-dot"></span><span>DEMO ENVIRONMENT</span></div>
+          <strong>Built on simulated data</strong>
+          <p>No live utility connection. Explore the loss-injection demo safely.</p>
+          <button class="pilot-link" data-action="simulate">Run a demo <span>↗</span></button>
+        </div>
+        <button class="user-profile" aria-label="Current profile">
+          <span class="avatar">AS</span>
+          <span class="profile-copy"><strong>Analyst workspace</strong><small>Field operations</small></span>
+          <span class="profile-menu">···</span>
+        </button>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+          <div class="breadcrumb"><span>Western region</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="last-sync"><span class="sync-dot"></span> Updated 4 min ago</span>
+            <button class="icon-button notification-button" aria-label="Notifications">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 8.5a5.5 5.5 0 0 0-11 0c0 6-2 6-2 7h15c0-1-2-1-2-7ZM8 17h4" /></svg>
+              <i></i>
+            </button>
+            <button class="help-button" aria-label="About this demo">?</button>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="view-panel" id="view-overview">
+            <div class="page-heading">
+              <div>
+                <div class="eyebrow"><span class="eyebrow-dot"></span> DISTRIBUTION INTELLIGENCE <span class="eyebrow-line"></span> <span>SAT, 03 OCT 2026</span></div>
+                <h1>Good morning, analyst <span class="wave">✳</span></h1>
+                <p class="page-subtitle">Here’s where your field team should look first today.</p>
+              </div>
+              <div class="heading-actions">
+                <label class="select-wrap">
+                  <span class="sr-only">Select time range</span>
+                  <select id="time-range" aria-label="Select time range"><option value="24h">Last 24 hours</option><option value="7d">Last 7 days</option><option value="30d">Last 30 days</option></select>
+                </label>
+                <button class="button button-primary" data-action="simulate"><span class="play-icon">▶</span> <span id="simulate-label">Reset demo</span></button>
+              </div>
+            </div>
+
+            <div class="demo-notice"><span class="notice-icon">i</span><span><strong>Prototype · simulated data</strong><span class="notice-divider">/</span> Metrics are illustrative and do not represent a live utility system.</span><button class="notice-dismiss" aria-label="Dismiss notice">×</button></div>
+
+            <div class="metric-grid">
+              <article class="metric-card">
+                <div class="metric-top"><span>DT-03 OBSERVED LOSS</span><span class="metric-icon icon-amber">↘</span></div>
+                <div class="metric-value" id="metric-loss">15.6<span class="metric-unit">%</span></div>
+                <div class="metric-bottom"><span class="metric-context" id="metric-context">vs. expected 6.5–9.1%</span><span class="metric-change positive" id="metric-change">+7.7 pts</span></div>
+                <div class="metric-spark spark-amber" aria-hidden="true"><svg viewBox="0 0 130 32"><path d="M0 24 13 20 25 22 37 14 50 17 63 9 76 15 88 10 101 13 115 5 130 8" /></svg></div>
+              </article>
+              <article class="metric-card">
+                <div class="metric-top"><span>ASSETS TO INVESTIGATE</span><span class="metric-icon icon-red">!</span></div>
+                <div class="metric-value" id="metric-assets">03</div>
+                <div class="metric-bottom"><span class="metric-context">of 8 monitored transformers</span><span class="metric-change neutral" id="high-priority-count">1 high priority</span></div>
+                <div class="metric-progress"><span id="asset-progress-fill" style="width:37.5%"></span></div>
+              </article>
+              <article class="metric-card">
+                <div class="metric-top"><span>METER DATA COVERAGE</span><span class="metric-icon icon-green">◌</span></div>
+                <div class="metric-value">98.2<span class="metric-unit">%</span></div>
+                <div class="metric-bottom"><span class="metric-context">AMI readings received</span><span class="metric-change good">Healthy</span></div>
+                <div class="coverage-bar"><span style="width:98.2%"></span></div>
+              </article>
+              <article class="metric-card">
+                <div class="metric-top"><span>FIELD HIT RATE</span><span class="metric-icon icon-blue">↗</span></div>
+                <div class="metric-value">—</div>
+                <div class="metric-bottom"><span class="metric-context">Awaiting pilot baseline</span><span class="metric-change neutral">Not measured</span></div>
+                <div class="metric-footnote">Measured after investigated cases</div>
+              </article>
+            </div>
+
+            <div class="section-row overview-section-row">
+              <div class="panel chart-panel">
+                <div class="panel-header">
+                  <div><div class="panel-title-row"><h2 id="chart-title">DT-03 loss trend</h2><span class="live-tag"><i></i> SIMULATED</span></div><p>Observed loss vs. expected range · Feeder F101</p></div>
+                  <button class="more-button" aria-label="Chart options">···</button>
+                </div>
+                <div class="chart-summary"><strong id="chart-current">15.6%</strong><span>observed now</span><span class="summary-separator"></span><span class="expected-key"></span><span>expected <strong id="chart-expected">6.5–9.1%</strong></span></div>
+                <div class="chart-wrap">
+                  <div class="y-labels" aria-hidden="true"><span>20%</span><span>15%</span><span>10%</span><span>5%</span><span>0%</span></div>
+                  <svg id="loss-chart" class="loss-chart" viewBox="0 0 760 184" role="img" aria-label="Simulated feeder loss trend with observed and expected loss"></svg>
+                  <div class="x-labels" id="x-labels" aria-hidden="true"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>Now</span></div>
+                </div>
+                <div class="chart-footer"><span><i class="legend-line observed-legend"></i> Observed loss</span><span><i class="legend-band"></i> Expected range</span><span class="chart-footer-note"><span class="data-dot"></span> 15-min intervals</span></div>
+              </div>
+
+              <div class="panel priority-panel">
+                <div class="panel-header">
+                  <div><div class="panel-title-row"><h2 id="asset-card-title">Priority asset</h2><span class="priority-badge">HIGH</span></div><p id="asset-card-subtitle">Recommended first inspection</p></div>
+                  <button class="more-button" aria-label="Asset options">···</button>
+                </div>
+                <div class="asset-identity"><div class="transformer-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M11 7h18v9H11zM8 16h24v14H8zM13 30v4m14-4v4M4 34h32M16 10h8M13 21h14M13 25h14M20 16v14" /></svg></div><div><h3 id="selected-asset-name">DT-03 <span class="asset-status-dot"></span></h3><span id="selected-asset-meta">Feeder F101 <span>·</span> 400 kVA</span></div><button class="arrow-button" aria-label="Open asset details">↗</button></div>
+                <div class="asset-score"><div><span>ANOMALY PROBABILITY</span><strong id="selected-score">94<span>%</span></strong></div><div class="score-meter"><span id="score-meter-fill" style="width:94%"></span></div></div>
+                <div class="asset-evidence">
+                  <div class="evidence-heading"><strong>Evidence supporting alert</strong><span>3 signals</span></div>
+                  <div class="evidence-item"><span class="evidence-check">✓</span><span id="evidence-deviation-label">Loss above learned normal</span><strong id="evidence-loss">+7.7 pts</strong></div>
+                  <div class="evidence-item"><span class="evidence-check">✓</span><span>Persistence</span><strong id="evidence-persistence">6 hours</strong></div>
+                  <div class="evidence-item"><span class="evidence-check muted-check">✓</span><span>Feeder voltage stable</span><strong class="evidence-ok">Normal</strong></div>
+                </div>
+                <div class="responsible-note"><span>◎</span><span>Asset-level finding only. This is not evidence of consumer wrongdoing.</span></div>
+                <button class="button button-outline full-width" id="asset-review-button" data-view="investigations">Review investigation <span>→</span></button>
+              </div>
+            </div>
+
+            <div class="section-row lower-section-row">
+              <div class="panel topology-panel">
+                <div class="panel-header">
+                  <div><div class="panel-title-row"><h2>Feeder F101</h2><span class="status-chip"><i></i> 8 assets online</span></div><p>Transformer network · simplified topology</p></div>
+                  <button class="text-button" data-view="network">View network <span>→</span></button>
+                </div>
+                <div class="topology-mini" id="topology-mini"></div>
+                <div class="topology-legend"><span><i class="node-legend normal-node"></i> Normal</span><span><i class="node-legend watch-node"></i> Monitor</span><span><i class="node-legend alert-node"></i> Investigate</span><span class="topology-sync">Topology snapshot · 06:00</span></div>
+              </div>
+              <div class="panel alerts-panel">
+                <div class="panel-header">
+                  <div><div class="panel-title-row"><h2>Needs attention</h2><span class="small-count">03</span></div><p>Ranked by persistence &amp; magnitude</p></div>
+                  <button class="text-button" data-view="assets">All assets <span>→</span></button>
+                </div>
+                <div class="alert-list" id="alert-list"></div>
+              </div>
+            </div>
+            <footer class="page-footer"><span>GridGuard <span>·</span> Sankalp Climate Edition 2026</span><span>Prototype uses synthetic data <span>·</span> No live grid connection</span></footer>
+          </section>
+
+          <section class="view-panel secondary-view" id="view-network" hidden>
+            <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> LIVE TOPOLOGY <span class="eyebrow-line"></span> FEEDER F101</div><h1>Feeder network</h1><p class="page-subtitle">Follow the energy path from substation to distribution transformers.</p></div><button class="button button-primary" data-action="simulate"><span class="play-icon">▶</span> <span class="simulate-label-secondary">Reset demo</span></button></div>
+            <div class="demo-notice"><span class="notice-icon">i</span><span><strong>Simplified topology · simulated data</strong><span class="notice-divider">/</span> Network connectivity and asset states are illustrative.</span></div>
+            <div class="panel network-detail-panel"><div class="panel-header"><div><div class="panel-title-row"><h2>F101 distribution path</h2><span class="status-chip"><i></i> 8 assets online</span></div><p>Substation S-01 · 11 kV primary · 8 distribution transformers</p></div><span class="network-updated">Snapshot · 06:00</span></div><div id="topology-large" class="topology-large"></div><div class="network-insight"><span class="insight-icon">↗</span><div><strong>DT-03 is the strongest anomaly signal</strong><p>Persistent loss deviation with stable upstream voltage. Verify meter health and recent network changes before dispatch.</p></div><button class="button button-outline" data-view="investigations">Review evidence <span>→</span></button></div></div>
+            <div class="network-stats"><article class="panel stat-box"><span>FEEDER INPUT</span><strong>10,000 <small>kWh</small></strong><p>Upstream meter · 24h</p></article><article class="panel stat-box"><span>DOWNSTREAM METERED</span><strong>9,320 <small>kWh</small></strong><p>Consumer &amp; DT meters</p></article><article class="panel stat-box"><span>OBSERVED DIFFERENCE</span><strong>6.8<small>%</small></strong><p>At feeder level · simulated</p></article><article class="panel stat-box"><span>TOPOLOGY CHANGES</span><strong>0 <small>events</small></strong><p>Reconfiguration checks clear</p></article></div>
+            <footer class="page-footer"><span>GridGuard <span>·</span> Sankalp Climate Edition 2026</span><span>Prototype uses synthetic data <span>·</span> No live grid connection</span></footer>
+          </section>
+
+          <section class="view-panel secondary-view" id="view-assets" hidden>
+            <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> ASSET REGISTER <span class="eyebrow-line"></span> FEEDER F101</div><h1>Transformer assets</h1><p class="page-subtitle">Investigate deviations at the asset level — not at the consumer level.</p></div><button class="button button-outline" id="export-assets">↓ Export list</button></div>
+            <div class="demo-notice"><span class="notice-icon">i</span><span><strong>Synthetic prototype register</strong><span class="notice-divider">/</span> Priorities are demonstrations, not field dispatch recommendations.</span></div>
+            <div class="asset-filters"><label class="search-field"><span>⌕</span><input id="asset-search" type="search" placeholder="Search transformer or feeder…" aria-label="Search transformer assets" /></label><label class="select-wrap"><select id="priority-filter" aria-label="Filter by priority"><option value="all">All priorities</option><option value="high">High</option><option value="medium">Medium</option><option value="normal">Normal</option></select></label><span class="filter-summary" id="filter-summary">8 assets</span></div>
+            <div class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>TRANSFORMER</th><th>FEEDER</th><th>CAPACITY</th><th>OBSERVED LOSS</th><th>EXPECTED RANGE</th><th>ANOMALY SCORE</th><th>PRIORITY</th><th></th></tr></thead><tbody id="assets-table-body"></tbody></table></div><div class="table-footer"><span>Showing <strong id="asset-range">8</strong> simulated assets</span><span>Priority is based on persistence and magnitude</span></div></div>
+            <div class="responsible-banner"><span>◎</span><div><strong>Responsible by design</strong><p>Alerts identify assets that may merit a technical check. They do not establish a cause or indicate consumer wrongdoing.</p></div></div>
+            <footer class="page-footer"><span>GridGuard <span>·</span> Sankalp Climate Edition 2026</span><span>Prototype uses synthetic data <span>·</span> No live grid connection</span></footer>
+          </section>
+
+          <section class="view-panel secondary-view" id="view-investigations" hidden>
+            <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> FIELD OPERATIONS <span class="eyebrow-line"></span> 3 OPEN</div><h1>Investigations</h1><p class="page-subtitle">A transparent evidence trail to help teams decide what to verify first.</p></div><button class="button button-primary" id="new-investigation">＋ New investigation</button></div>
+            <div class="demo-notice"><span class="notice-icon">i</span><span><strong>Demo investigation queue</strong><span class="notice-divider">/</span> No dispatch is made and no live cases exist in this prototype.</span></div>
+            <div class="investigation-layout"><div class="panel investigation-list-panel"><div class="panel-header"><div><div class="panel-title-row"><h2>Open investigations</h2><span class="small-count">03</span></div><p>Sorted by anomaly confidence</p></div><button class="more-button" aria-label="Investigation options">···</button></div><div id="investigation-list" class="investigation-list"></div></div>
+              <div class="panel investigation-detail" id="investigation-detail"></div>
+            </div>
+            <div class="responsible-banner"><span>◎</span><div><strong>Verify before you act</strong><p>Check meter faults, synchronization, network reconfiguration, and data quality before drawing operational conclusions.</p></div></div>
+            <footer class="page-footer"><span>GridGuard <span>·</span> Sankalp Climate Edition 2026</span><span>Prototype uses synthetic data <span>·</span> No live grid connection</span></footer>
+          </section>
+
+          <section class="view-panel secondary-view" id="view-data" hidden>
+            <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> INPUT MONITORING <span class="eyebrow-line"></span> DEMO</div><h1>Data health</h1><p class="page-subtitle">Check input coverage and known quality limits before interpreting alerts.</p></div><button class="button button-outline" id="refresh-data">↻ Refresh checks</button></div>
+            <div class="demo-notice"><span class="notice-icon">i</span><span><strong>Simulated telemetry</strong><span class="notice-divider">/</span> These checks are illustrative; no AMI or SCADA feeds are connected.</span></div>
+            <div class="data-health-grid"><article class="panel data-source-card"><div class="source-icon">AMI</div><div class="source-content"><div class="source-title"><h2>Consumer meter readings</h2><span class="health-status">Healthy</span></div><p>Simulated AMI feed · interval consumption readings</p><div class="source-meta"><span>Coverage<strong>98.2%</strong></span><span>Last received<strong>4 min ago</strong></span><span>Missing intervals<strong>1.8%</strong></span></div><div class="source-progress"><span style="width:98.2%"></span></div></div></article><article class="panel data-source-card"><div class="source-icon source-icon-blue">DT</div><div class="source-content"><div class="source-title"><h2>Transformer meter readings</h2><span class="health-status">Healthy</span></div><p>Synthetic DT meter readings · energy in / energy out</p><div class="source-meta"><span>Coverage<strong>96.4%</strong></span><span>Last received<strong>4 min ago</strong></span><span>Missing intervals<strong>3.6%</strong></span></div><div class="source-progress"><span style="width:96.4%"></span></div></div></article><article class="panel data-source-card"><div class="source-icon source-icon-violet">GIS</div><div class="source-content"><div class="source-title"><h2>Network topology</h2><span class="health-status">Current</span></div><p>Simplified static topology snapshot for Feeder F101</p><div class="source-meta"><span>Assets mapped<strong>8 / 8</strong></span><span>Snapshot<strong>06:00 today</strong></span><span>Change events<strong>0 known</strong></span></div><div class="source-progress"><span style="width:100%"></span></div></div></article><article class="panel data-source-card"><div class="source-icon source-icon-amber">SC</div><div class="source-content"><div class="source-title"><h2>Feeder voltage</h2><span class="health-status">Stable</span></div><p>Illustrative upstream voltage series · stability check</p><div class="source-meta"><span>State<strong>Normal</strong></span><span>Outages<strong>None shown</strong></span><span>Source<strong>Simulated</strong></span></div><div class="source-progress"><span style="width:99%"></span></div></div></article></div>
+            <div class="responsible-banner"><span>!</span><div><strong>Accounting depends on meter placement, synchronization, and data quality.</strong><p>Data gaps and topology changes should be reviewed before interpreting energy differences as abnormal loss.</p></div></div>
+            <footer class="page-footer"><span>GridGuard <span>·</span> Sankalp Climate Edition 2026</span><span>Prototype uses synthetic data <span>·</span> No live grid connection</span></footer>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal-backdrop" id="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" aria-label="Close dialog">×</button><span class="modal-icon">✳</span><h2 id="modal-title">Start a demo investigation?</h2><p>This will create a local, simulated case for DT-03. No field team will be dispatched.</p><div class="modal-actions"><button class="button button-outline" id="cancel-investigation">Cancel</button><button class="button button-primary" id="confirm-investigation">Create demo case</button></div></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>
